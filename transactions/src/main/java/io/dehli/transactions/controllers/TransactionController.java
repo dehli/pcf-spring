@@ -45,6 +45,10 @@ public class TransactionController {
     public ResponseEntity<String> createAccount(@RequestParam(name="id") Integer accountId,
                                                 @RequestParam(name="amount") Double amount) {
 
+        if (amount < minAmount || amount > maxAmount) {
+            return new ResponseEntity<>("error", HttpStatus.BAD_REQUEST);
+        }
+
         // TODO: Figure out a better way to send this message
         rabbitTemplate.convertAndSend( "accounts", accountId.toString() + ":" + amount.toString());
 
