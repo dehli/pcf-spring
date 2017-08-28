@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+# kotlin
+cd kotlin
+gradle wrapper --gradle-version 3.5.1
+./gradlew assemble
+
 # accounts
-cd accounts
+cd ../accounts
 gradle wrapper --gradle-version 3.5.1
 ./gradlew assemble
 cf create-service p-mysql 1gb accounts-mysql

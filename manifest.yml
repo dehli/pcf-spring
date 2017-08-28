@@ -20,3 +20,8 @@ applications:
     - transactions-redis
     - events-queue
     - config-server
+
+- name: kotlin
+  memory: 1G
+  instances: 1
+  path: kotlin/build/libs/kotlin-0.0.1-SNAPSHOT.jar
