@@ -1,0 +1,4 @@
+---
+transactions:
+  max: 100000
+  min: 0

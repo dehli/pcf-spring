@@ -1,0 +1,22 @@
+---
+applications:
+
+- name: accounts
+  memory: 1G
+  instances: 1
+  path: accounts/build/libs/accounts-0.0.1-SNAPSHOT.jar
+  services:
+    - accounts-mysql
+    - accounts-redis
+    - events-queue
+    - config-server
+
+- name: transactions
+  memory: 1G
+  instances: 1
+  path: transactions/build/libs/transactions-0.0.1-SNAPSHOT.jar
+  services:
+    - transactions-mysql
+    - transactions-redis
+    - events-queue
+    - config-server
