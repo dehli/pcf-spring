@@ -1,4 +1,4 @@
 ---
 transactions:
-  max: 100000
+  max: 100
   min: 0
