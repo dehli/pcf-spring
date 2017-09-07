@@ -1,27 +1,27 @@
 ---
 applications:
 
-- name: accounts
+- name: dehli-accounts
   memory: 1G
   instances: 1
   path: accounts/build/libs/accounts-0.0.1-SNAPSHOT.jar
   services:
     - accounts-mysql
-    - accounts-redis
+    - shared-redis
     - events-queue
     - config-server
 
-- name: transactions
+- name: dehli-transactions
   memory: 1G
   instances: 1
   path: transactions/build/libs/transactions-0.0.1-SNAPSHOT.jar
   services:
     - transactions-mysql
-    - transactions-redis
+    - shared-redis
     - events-queue
     - config-server
 
-- name: kotlin
-  memory: 1G
-  instances: 1
-  path: kotlin/build/libs/kotlin-0.0.1-SNAPSHOT.jar
+#- name: dehli-kotlin
+#  memory: 1G
+#  instances: 1
+#  path: kotlin/build/libs/kotlin-0.0.1-SNAPSHOT.jar
